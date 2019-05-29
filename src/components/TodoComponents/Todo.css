@@ -1,0 +1,20 @@
+.list {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.list-card {
+ color: black;
+    background: white;
+}
+
+.list-info {
+    color: black;
+    background: white;
+}
+
+.form {
+    color: black;
+    background: white;
+}
