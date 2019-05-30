@@ -1,5 +1,5 @@
-import React from 'react';
-import TodoList from './components/TodoComponents/TodoList';
+import React from "react";
+import TodoList from "./components/TodoComponents/TodoList";
 import TodoForm from "./components/TodoComponents/TodoForm";
 
 class App extends React.Component {
@@ -21,8 +21,14 @@ class App extends React.Component {
     };
   }
 
-  updateTodoItem = event => {
-    this.setState({ todoItem: event.target.value });
+  addTodo = (e, item) => {
+    e.preventDefault();
+    const newTodoItem = {
+      task: item,
+      id: Date.now(),
+      completed: false
+    };
+    this.setState({ todos: [...this.state.todos, newTodoItem] });
   };
 
   render() {
@@ -35,6 +41,5 @@ class App extends React.Component {
     );
   }
 }
-
 
 export default App;
