@@ -60,7 +60,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="header">
-          <h1>Add New ToDo:</h1>
+          <h1>Let's Get'Er Done</h1>
           <TodoForm addTodo={this.addTodo} />
         </div>
         <TodoList todos={this.state.todos} toggleTask={this.toggleTask} />
