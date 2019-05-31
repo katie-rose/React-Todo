@@ -22,6 +22,14 @@ class App extends React.Component {
     };
   }
 
+
+  clearCompleted = e => {
+    e.preventDefault();
+    this.setState({
+      todos: this.state.todos.filter(task => !task.completed)
+    });
+  };
+
   addTodo = (e, item) => {
     e.preventDefault();
     const newTodoItem = {
@@ -32,7 +40,7 @@ class App extends React.Component {
     this.setState({ todos: [...this.state.todos, newTodoItem] });
   };
 
-  toggleTask= id => {
+  toggleTask = id => {
     this.setState(prevState => {
       return {
         todos: prevState.todos.map(task => {
@@ -49,19 +57,12 @@ class App extends React.Component {
     });
   };
 
-  clearCompleted = e => {
-    e.preventDefault();
-    this.setState({
-      tasks: this.state.tasks.filter(task => !task.completed)
-    });
-  };
-
   render() {
     return (
       <div className="App">
         <div className="header">
           <h1>Let's Get'Er Done</h1>
-          <TodoForm addTodo={this.addTodo} />
+          <TodoForm lolz={this.clearCompleted} addTodo={this.addTodo} />
         </div>
         <TodoList todos={this.state.todos} toggleTask={this.toggleTask} />
       </div>
